@@ -11,6 +11,14 @@ var Modal = function($, win, doc){
         this.modal.find('.y-modal__close').on('click', function(){
             this.close();
         }.bind(this));
+
+        this.modal.find('.y-modal__wrapper').on('click', checkForClose.bind(this));
+    }
+
+    function checkForClose(e){
+        if ($(e.target).is('.y-modal__wrapper')) {
+            this.close();
+        }
     }
 
     function getScrollWidth(){
